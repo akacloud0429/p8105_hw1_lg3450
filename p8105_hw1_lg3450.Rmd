@@ -7,11 +7,28 @@ output: github_document
 
 R Markdown file by Luyun Ge for P8105 Homework1.
 
-step 1: load required library （3）
+step 1: load required library
 ```{r}
 library(moderndive)
 library(ggplot2)
 library(tidyverse)
 ```
- 
- 
+
+# Problem1
+We loaded the required dataset for problem1.
+```{r}
+data("early_january_weather")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
