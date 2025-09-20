@@ -44,6 +44,17 @@ ggsave("temp_vs_time_hour.png", plot = p1_plot)
 ```
 The scatterplot shows that temperature fluctuates across the hours of the day over early January, generally ranging from about 25 to 50 degrees Fahrenheit.Higher humidity values (lighter blue points) occur more often at higher temperatures, while lower humidity values (darker blue points) occur at lower temperatures, indicating a positive relationship between temperature and humidity over time.
 
+# Problem2
+To solve the problem, we first created the data frame based on requirements.
+```{r}
+p2_df <- data.frame(
+  random_Nsample = rnorm(10),
+  greater_than_zero = rnorm(10) > 0,
+  character = letters[1:10],
+  factor = factor(rep(c("A", "B", "C"), length.out = 10))
+)
+p2_df
+```
 
 
 
