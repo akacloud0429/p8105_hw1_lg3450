@@ -17,10 +17,20 @@ library(tidyverse)
 # Problem1
 We loaded the required dataset for problem1.
 ```{r}
+
 data("early_january_weather")
 ```
+Then we listed all variables in this dataset, calculated the size of this dataset and the mean temperature.
 
-
+```{r}
+names(early_january_weather) #listed all variables in dataset
+nrow(early_january_weather) #number of rows
+ncol(early_january_weather) #number of columns
+mean(early_january_weather$temp) #mean temperature
+```
+The `early_january_weather dataset` has 15 variables: `origin`, `year`, `month`, `day`, `hour`, `temp`, `dewp`, `humid`, `wind_dir`, `wind_speed`, `wind_gust`, `precip`, `pressure`, `visib`, `time_hour`. 
+The dataset has 358 rows and 15 columns. 
+The mean temperarture of early January is 39.58212 Fahrenheit.
 
 
 
