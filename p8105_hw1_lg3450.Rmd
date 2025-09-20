@@ -7,7 +7,7 @@ output: github_document
 
 R Markdown file by Luyun Ge for P8105 Homework1.
 
-step 1: load required library
+We started by loading required libraries.
 ```{r}
 library(moderndive)
 library(ggplot2)
@@ -21,7 +21,6 @@ We loaded the required dataset for problem1.
 data("early_january_weather")
 ```
 Then we listed all variables in this dataset, calculated the size of this dataset and the mean temperature.
-
 ```{r}
 names(early_january_weather) #listed all variables in dataset
 nrow(early_january_weather) #number of rows
@@ -32,12 +31,18 @@ The `early_january_weather dataset` has 15 variables: `origin`, `year`, `month`,
 The dataset has 358 rows and 15 columns. 
 The mean temperarture of early January is 39.58212 Fahrenheit.
 
-
-
-
-
-
-
+Then we plot the scatterplot of temperature vs time.
+```{r}
+p1_plot <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+  geom_point() +
+  labs(title = "Temperature vs Time (in hours)",
+       x = "Time (in hours)",
+       y = "Temperature",
+       color = "Humidity")
+p1_plot
+ggsave("temp_vs_time_hour.png", plot = p1_plot)
+```
+The scatterplot shows that temperature fluctuates across the hours of the day over early January, generally ranging from about 25 to 50 degrees Fahrenheit.Higher humidity values (lighter blue points) occur more often at higher temperatures, while lower humidity values (darker blue points) occur at lower temperatures, indicating a positive relationship between temperature and humidity over time.
 
 
 
