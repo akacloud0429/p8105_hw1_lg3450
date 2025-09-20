@@ -7,7 +7,7 @@ output: github_document
 
 R Markdown file by Luyun Ge for P8105 Homework1.
 
-We started by loading required libraries.
+We start by loading required libraries.
 ```{r}
 library(moderndive)
 library(ggplot2)
@@ -15,12 +15,12 @@ library(tidyverse)
 ```
 
 # Problem1
-We loaded the required dataset for problem1.
+We load the required dataset for problem1.
 ```{r}
 
 data("early_january_weather")
 ```
-Then we listed all variables in this dataset, calculated the size of this dataset and the mean temperature.
+Then we list all variables in this dataset, calculate the size of this dataset and the mean temperature.
 ```{r}
 names(early_january_weather) #listed all variables in dataset
 nrow(early_january_weather) #number of rows
@@ -45,7 +45,7 @@ ggsave("temp_vs_time_hour.png", plot = p1_plot)
 The scatterplot shows that temperature fluctuates across the hours of the day over early January, generally ranging from about 25 to 50 degrees Fahrenheit.Higher humidity values (lighter blue points) occur more often at higher temperatures, while lower humidity values (darker blue points) occur at lower temperatures, indicating a positive relationship between temperature and humidity over time.
 
 # Problem2
-To solve the problem, we first created the data frame based on requirements.
+To solve the problem, we first create the data frame based on requirements.
 ```{r}
 p2_df <- data.frame(
   random_Nsample = rnorm(10),
@@ -55,7 +55,7 @@ p2_df <- data.frame(
 )
 p2_df
 ```
-Then calculated the mean of each variables in the data frame.
+Then calculate the mean of each variables in the data frame.
 ```{r}
 mean(pull(p2_df,random_Nsample))
 mean(pull(p2_df,greater_than_zero))
@@ -65,16 +65,13 @@ mean(pull(p2_df,factor))
 The mean could be calculated for `random_Nsample` because the mean function works for numeric values. 
 The mean could also be calculated for `greater_than_zero` because R converts TRUE to 1 and FALSE to 0.
 We failed to calculate the mean for `character` and `factor` because characters and categorical factors cannot be averaged.
-
-
-
-
-
-
-
-
-
-
+Now we convert all variables to numeric variables.
+```{r}
+as.numeric(p2_df$greater_than_zero)
+as.numeric(p2_df$character)
+as.numeric(p2_df$factor)
+```
+We are able to convert the `greater_than_zero` and `factor` variables to numeric, but conversion fails for the `character` variable. The logical variable `greater_than_zero` converts to 0 and 1, so calculating its mean is meaningful. `factor` converts to underlying integer codes; while the mean produces a number, it does not meaningfully represent the categories.
 
 
 
