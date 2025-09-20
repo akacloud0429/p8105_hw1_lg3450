@@ -55,6 +55,29 @@ p2_df <- data.frame(
 )
 p2_df
 ```
+Then calculated the mean of each variables in the data frame.
+```{r}
+mean(pull(p2_df,random_Nsample))
+mean(pull(p2_df,greater_than_zero))
+mean(pull(p2_df,character))
+mean(pull(p2_df,factor))  
+```
+The mean could be calculated for `random_Nsample` because the mean function works for numeric values. 
+The mean could also be calculated for `greater_than_zero` because R converts TRUE to 1 and FALSE to 0.
+We failed to calculate the mean for `character` and `factor` because characters and categorical factors cannot be averaged.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
